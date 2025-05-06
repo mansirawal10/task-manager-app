@@ -28,8 +28,7 @@ export default function EditTask() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log("Fetching task from:",`${process.env.NEXT_PUBLIC_API_URL}/api/tasks${taskId}`);
-  
+    console.log("Fetching task from:",`${process.env.NEXT_PUBLIC_API_URL}/api/tasks${taskId}`)
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${taskId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
@@ -56,6 +55,8 @@ export default function EditTask() {
   }, [taskId]);
 
   // Fetch available users
+  useEffect(() => {
+
   fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users`, {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   })
@@ -77,6 +78,8 @@ export default function EditTask() {
       console.error("Error fetching users:", error);
       setError("Error loading users.");
     });
+  }, []);
+
   // Calculate available users that are not currently selected.
   const availableUsers = users.filter(
     (user) => !selectedUsers.includes(user.username)
