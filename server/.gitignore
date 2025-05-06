@@ -1,0 +1,34 @@
+﻿# Node.js dependencies
+node_modules/
+
+# Environment variables (API keys, database credentials, etc.)
+.env
+
+# Logs and debug-related files
+logs/
+*.log
+
+# Cached, temporary, or build files
+cache/
+dist/
+build/
+
+# User-uploaded files (if applicable)
+uploads/
+
+# Database files (if using SQLite or similar local storage)
+db.sqlite
+*.db
+
+# IDE and editor-specific settings
+.vscode/
+.idea/
+*.swp
+
+# Code coverage and test results
+coverage/
+test-results/
+
+# macOS/Windows system files
+.DS_Store
+Thumbs.db
