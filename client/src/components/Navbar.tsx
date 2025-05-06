@@ -1,20 +1,13 @@
 'use client';
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 
-interface Notification {
-  _id: string;
-  message: string;
-  read: boolean;
-  createdAt: string;
-}
+
 
 export default function Navbar() {
   const [showNotifications, setShowNotifications] = useState(false);
-  const [notificationsCount, setNotificationsCount] = useState(0);
   const [username, setUsername] = useState("User");
 
   // Retrieve the stored username when the component mounts.
@@ -54,11 +47,7 @@ export default function Navbar() {
               size="lg"
               className="text-gray-700"
             />
-            {notificationsCount > 0 && (
-              <span className="absolute -top-1 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                {notificationsCount}
-              </span>
-            )}
+    
           </button>
 
           {/* Welcome Message (hidden on extra-small screens) */}

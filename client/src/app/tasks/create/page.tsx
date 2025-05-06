@@ -15,7 +15,6 @@ export default function CreateTaskPage() {
   });
 
   const [users, setUsers] = useState<{ _id: string; username: string }[]>([]); // Store user IDs and usernames
-  const [tasks, setTasks] = useState<any[]>([]); // State for tasks
   const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {

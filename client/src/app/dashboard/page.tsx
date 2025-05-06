@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTasks, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import Link from "next/link";
 
 interface Task {
   _id: string;
