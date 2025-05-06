@@ -25,7 +25,7 @@ export default function CreateTaskPage() {
   // Fetch usernames dynamically
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch("http://localhost:5000/api/users");
+      const response = await fetch("${NEXT_PUBLIC_API_URL}/api/users");
       const data = await response.json();
       console.log("Fetched Users:", data);
       setUsers(data.users); // Store list of usernames
@@ -47,7 +47,7 @@ export default function CreateTaskPage() {
     };
   
     try {
-      const response = await fetch("http://localhost:5000/api/tasks", {
+      const response = await fetch("${NEXT_PUBLIC_API_URL}/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

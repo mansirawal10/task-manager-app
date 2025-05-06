@@ -72,7 +72,7 @@ export default function Dashboard() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${taskId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -198,7 +198,7 @@ export default function Dashboard() {
 
         {/* Confirmation Dialog for Task Deletion */}
         {confirmDelete.visible && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex justify-center items-center">
             <div className="bg-white p-6 rounded-lg shadow-xl text-center">
               <p className="text-lg font-semibold mb-4">
                 Are you sure you want to delete this task?
