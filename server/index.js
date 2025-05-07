@@ -15,7 +15,12 @@ const app = express(); // Ensure express is initialized only once
 
 // Middleware
 app.use(cors({
-  origin:"https://task-manager-a5ityq0hv-mansis-projects-9ea07d16.vercel.app"
+ 
+  origin: ["http://localhost:3000", "https://task-manager-app-drab-eta.vercel.app"],
+  credentials: true, 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+
 }));
 app.use(express.json());
 
