@@ -15,9 +15,7 @@ export default function CreateTaskPage() {
   });
 
   const [users, setUsers] = useState<{ _id: string; username: string }[]>([]);
-  const [tasks, setTasks] = useState<any[]>([]);
   const [token, setToken] = useState<string | null>(null);
-  const [selectedUser, setSelectedUser] = useState(""); // For the select input
 
   useEffect(() => {
     setToken(localStorage.getItem("token"));
