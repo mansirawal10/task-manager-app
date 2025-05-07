@@ -2,7 +2,9 @@
 export const dynamic = 'force-dynamic';
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
+
+
 
 interface User {
   username: string;
@@ -133,6 +135,7 @@ export default function EditTask() {
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
+    
     <div className="p-6 bg-white shadow-md rounded-lg">
       <h1 className="text-2xl font-bold mb-4">Edit Task</h1>
 
@@ -224,5 +227,6 @@ export default function EditTask() {
         Save Changes
       </button>
     </div>
+    
   );
 }
